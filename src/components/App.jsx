@@ -7,9 +7,10 @@ import Admin from './Admin'
 import Instructions from './Instructions'
 import AdminAuth from './AdminAuth'
 import NotFound from './NotFound'
+import './App.css';
 import Score from './Score'
 import Loginpage from './Loginpage'
-
+import ReactRegistrationPage from './RegistrationPage'
 // import PrivateRoute from './PrivateRoute'
 // import {db} from '../firebase'
 
@@ -26,7 +27,8 @@ export default function App() {
         <div>
             <Router>
                 <Switch>
-                    <Route path='/' exact><Landing /></Route>
+                    {/* <Route path='/' exact><Landing /></Route> */}
+                    <Route path='/' exact><ReactRegistrationPage/></Route>
                     {/* <Route path='/' exact><Loginpage /></Route> */}
                     {/* <Route path='/Loginpage' exact><Loginpage /></Route> */}
                     {/* <Route path='/verification'><Otp /></Route> */}

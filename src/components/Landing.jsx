@@ -4,6 +4,7 @@ import firebaseApp from '../firebase';
 import Brand from './Brand'
 import Event from './Event'
 import TestNotStarted from './TestNotStarted'
+import Loginpage from './Loginpage';
 
 export default function Landing() {
     // const [text, setText] = useState("");
@@ -103,37 +104,38 @@ export default function Landing() {
                 <p>Central India’s largest quizzing club, the Quizzers’ Club MANIT, is shortly here to unfold a futuristic and enthralling episode. Steel yourself to take on one of its fat parts? Flaunt your virtuosity and prove that you deserve it! You got this. Good luck!</p>
             </div>
             {render ? 
-            <div>
-                <h3>Hello !</h3>
-                <div className="d-flex justify-content-center">
-                    <div>
-                        {/* <input value={first} onChange={handleChange} type="text" placeholder="First Name" required /> */}
-                        {/* <input value={last} onChange={event => setLast(event.target.value)} type="text" placeholder="Last Name" required /> */}
-                        <input type="email" value={email} onChange={event => setEmail(event.target.value)} placeholder="Email Address" required />
-                        <input value={scholar} onChange={event => setScholar(event.target.value)} type="number" placeholder="Scholar Number" required />
-                        <select value={post} onChange={event => setPost(event.target.value)} required>
-                            <option value="">Select your branch</option>
-                            <option value="Computer Science Engineering">Computer Science Engineering</option>
-                            <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
-                            <option value="Electrical Engineering">Electrical Engineering</option>
-                            <option value="Mechanical Engineering">Mechanical Engineering</option>
-                            <option value="Mathematics and Data Science">Mathematics and Data Science</option>
-                            <option value="Chemical Engineering">Chemical Engineering</option>
-                            <option value="Civil Engineering">Civil Engineering</option>
-                            <option value="MSME">MSME</option>
-                            <option value="B.Planning">B.Planning/B.Architecture</option>
-                            <option value="MCA">MCA</option>
-                        </select>
+            <Loginpage />
+            // <div>
+            //     <h3>Hello !</h3>
+            //     <div className="d-flex justify-content-center">
+            //         <div>
+            //             {/* <input value={first} onChange={handleChange} type="text" placeholder="First Name" required /> */}
+            //             {/* <input value={last} onChange={event => setLast(event.target.value)} type="text" placeholder="Last Name" required /> */}
+            //             <input type="email" value={email} onChange={event => setEmail(event.target.value)} placeholder="Email Address" required />
+            //             <input value={scholar} onChange={event => setScholar(event.target.value)} type="number" placeholder="Scholar Number" required />
+            //             <select value={post} onChange={event => setPost(event.target.value)} required>
+            //                 <option value="">Select your branch</option>
+            //                 <option value="Computer Science Engineering">Computer Science Engineering</option>
+            //                 <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+            //                 <option value="Electrical Engineering">Electrical Engineering</option>
+            //                 <option value="Mechanical Engineering">Mechanical Engineering</option>
+            //                 <option value="Mathematics and Data Science">Mathematics and Data Science</option>
+            //                 <option value="Chemical Engineering">Chemical Engineering</option>
+            //                 <option value="Civil Engineering">Civil Engineering</option>
+            //                 <option value="MSME">MSME</option>
+            //                 <option value="B.Planning">B.Planning/B.Architecture</option>
+            //                 <option value="MCA">MCA</option>
+            //             </select>
                         
-                        {/* <input value={tel} onChange={event => setTel(event.target.value)} type="tel" placeholder="Mobile Number" required /> */}
+            //             {/* <input value={tel} onChange={event => setTel(event.target.value)} type="tel" placeholder="Mobile Number" required /> */}
                        
-                    </div>
-                </div>
-                <div className="d-flex justify-content-center"><button onClick={register}>Submit</button></div>
-                {message}
-                <br />
-                <p style={{ 'color': '#f1faee', 'textAlign': 'center' }}>If you face any issue, feel free to call <br />Ritik : +91 7004399783<br /> Kiran : +91 9057628755</p>
-            </div>
+            //         </div>
+            //     </div>
+            //     <div className="d-flex justify-content-center"><button onClick={register}>Submit</button></div>
+            //     {message}
+            //     <br />
+            //     <p style={{ 'color': '#f1faee', 'textAlign': 'center' }}>If you face any issue, feel free to call <br />Ritik : +91 7004399783<br /> Kiran : +91 9057628755</p>
+            // </div>
             :
             <TestNotStarted />
 }
