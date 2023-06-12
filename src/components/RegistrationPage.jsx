@@ -69,6 +69,7 @@ class ReactRegistrationPage extends Component {
     altphone: "",
     dob: "",
     email: "",
+    
   };
 
   handlechange = (e) => {
@@ -76,11 +77,12 @@ class ReactRegistrationPage extends Component {
 
     this.setState({ [name]: value });
   };
-
+  
   handlesubmit = async (e) => {
     e.preventDefault();
-    const { Name, std, school, place, phone, altphone, dob, email } =
-      this.state;
+    console.log(this.state);
+    const { Name, std, school, place, phone, altphone, dob, email  } =
+    this.state;
     try {
       const { user } = await auth.createUserWithEmailAndPassword( email, dob);
       console.log(user);
@@ -93,12 +95,13 @@ class ReactRegistrationPage extends Component {
         phone,
         altphone,
         dob,
+      
       });
       // await createUsersDocument(user, { school });
     } catch (error) {
       console.log("error", error);
     }
-
+    
     this.setState({
       Name: "",
       email: "",
@@ -108,12 +111,17 @@ class ReactRegistrationPage extends Component {
       school: "",
       phone: "",
       altphone: "",
+     
+      
     });
   };
-
+  
   render() {
-    const { Name, std, school, phone, altphone, email, place, dob } =
-      this.state;
+    const { Name, std, school, phone, altphone, email, place, dob  } =
+    this.state;
+    // this.setState({ [quiznottaken]: true });
+
+
     return (
       <div>
         <div className="logos flex align">

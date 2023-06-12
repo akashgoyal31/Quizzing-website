@@ -21,13 +21,13 @@ export default function Quiz() {
 
   const history = useHistory();
   const token = sessionStorage.getItem("auth");
-  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
+  const numbers = [1];
 
   //useState hook to highlight the corresponding question toggle button
   let [active, setActive] = useState(0);
   //Increment on pushing next button
   const increment = () => {
-    if (active !== 25) {
+    if (active !== 1) {
       setActive(active + 1);
     }
   }
@@ -92,13 +92,13 @@ export default function Quiz() {
         if (input.checked === true) {
           //Storing the user responses into the database
           if (ques[number - 1].ans === input.value) {
-            firebaseApp.firestore().collection("AnswerBank/" + sessionStorage.getItem("name") + "-" + sessionStorage.getItem("sch") + "/Answers").doc("answer" + (number < 10 ? "0" + number : number)).set({
+            firebaseApp.firestore().collection("AnswerBank/" + sessionStorage.getItem("name") + "-" + sessionStorage.getItem("dob") + "/Answers").doc("answer" + (number < 10 ? "0" + number : number)).set({
               actualAns: ques[number - 1].ans,
               userAns: input.value,
               correct: true
             })
           } else {
-            firebaseApp.firestore().collection("AnswerBank/" + sessionStorage.getItem("name") + "-" + sessionStorage.getItem("sch") + "/Answers").doc("answer" + (number < 10 ? "0" + number : number)).set({
+            firebaseApp.firestore().collection("AnswerBank/" + sessionStorage.getItem("name") + "-" + sessionStorage.getItem("dob") + "/Answers").doc("answer" + (number < 10 ? "0" + number : number)).set({
               actualAns: ques[number - 1].ans,
               userAns: input.value,
               correct: false

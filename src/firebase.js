@@ -71,6 +71,7 @@ export default firebaseApp;
         const { std } = additionalData;
        const { phone } = additionalData;
         const { altphone } = additionalData;
+      
   
       try {
         userRef.set({
@@ -82,6 +83,7 @@ export default firebaseApp;
           email,
           dob,
            place,
+           quiznottaken :true ,
           createdAt: new Date(),
         });
 

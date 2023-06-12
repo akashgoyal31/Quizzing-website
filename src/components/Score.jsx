@@ -18,7 +18,7 @@ export default function Score() {
         },
     });
 
-    const sch = sessionStorage.getItem("sch");
+    const dob = sessionStorage.getItem("dob");
     const history = useHistory();
     window.addEventListener("popstate", e => {
         history.push("/");
@@ -27,7 +27,7 @@ export default function Score() {
     const [points, setPoints] = useState(0);
     useEffect(() => {
         let score = 0;
-        // db.collection("AnswerBank/"+sessionStorage.getItem("name")+"-"+sessionStorage.getItem("sch")+"/Answers").onSnapshot((snapshot)=>{
+        // db.collection("AnswerBank/"+sessionStorage.getItem("name")+"-"+sessionStorage.getItem("dob")+"/Answers").onSnapshot((snapshot)=>{
         //     snapshot.forEach((doc)=>{
         //             if(doc.data().userAns === ""){
         //                 setPoints(score);
@@ -44,20 +44,20 @@ export default function Score() {
         // })
 
         //If user didn't answer no increment no decrement in points
-        db.collection("AnswerBank/" + sessionStorage.getItem("name") + "-" + sessionStorage.getItem("sch") + "/Answers").where('userAns', '==', '').onSnapshot((snapshot) => {
+        db.collection("AnswerBank/" + sessionStorage.getItem("name") + "-" + sessionStorage.getItem("dob") + "/Answers").where('userAns', '==', '').onSnapshot((snapshot) => {
             snapshot.forEach((doc) => {
                 setPoints(score);
             })
         })
         //If user's answer is correct, +4
-        db.collection("AnswerBank/" + sessionStorage.getItem("name") + "-" + sessionStorage.getItem("sch") + "/Answers").where('correct', '==', true).onSnapshot((snapshot) => {
+        db.collection("AnswerBank/" + sessionStorage.getItem("name") + "-" + sessionStorage.getItem("dob") + "/Answers").where('correct', '==', true).onSnapshot((snapshot) => {
             snapshot.forEach((doc) => {
                 score = score + 4;
                 setPoints(score);
             })
         })
         //If user's answer is incorrect, -1
-        db.collection("AnswerBank/" + sessionStorage.getItem("name") + "-" + sessionStorage.getItem("sch") + "/Answers").where('correct', '==', false).onSnapshot((snapshot) => {
+        db.collection("AnswerBank/" + sessionStorage.getItem("name") + "-" + sessionStorage.getItem("dob") + "/Answers").where('correct', '==', false).onSnapshot((snapshot) => {
             snapshot.forEach((doc) => {
                 score = score - 1;
                 setPoints(score);
@@ -66,9 +66,9 @@ export default function Score() {
     }, [])
 
     //Store the points in the database
-    db.collection("scores").doc(sessionStorage.getItem("name") + "-" + sessionStorage.getItem("sch")).set({
+    db.collection("scores").doc(sessionStorage.getItem("name") + "-" + sessionStorage.getItem("dob")).set({
         points: points,
-        name: sessionStorage.getItem("name") + "-" + sessionStorage.getItem("sch")
+        name: sessionStorage.getItem("name") + "-" + sessionStorage.getItem("dob")
     }).then(() => {
         setLoading(false);
     })
@@ -77,7 +77,7 @@ export default function Score() {
             <LinearProgress />
         </ThemeProvider>
         :
-        sch ? <div className="d-flex justify-content-center landing-page">
+        dob ? <div className="d-flex justify-content-center landing-page">
             <div>
                 {/* <h1 style={{'color':'#E63946', 'fontWeight':'bolder', 'textAlign':'center','fontSize':'3rem'}}>
                 V<span style={{'fontSize':'2.5rem'}}>I</span>H<span style={{'fontSize':'2.5rem'}}>AA</span>N
@@ -99,7 +99,7 @@ export default function Score() {
                 </h6>
                 <div className="d-flex justify-content-center">
                     <a href="/"><button style={{ 'borderRadius': '8px', 'width': '250px' }} onClick={() => {
-                        sessionStorage.removeItem("sch");
+                        sessionStorage.removeItem("dob");
                         sessionStorage.removeItem("name");
                     }}>Go to Home Page</button></a>
                 </div>

@@ -38,7 +38,7 @@ export default function App() {
                     <Route path='/quiz' component={Quiz} />
                     <Route path='/instructions' component={Instructions} />
                     {/* <Route path='/Loginpage' component={Loginpage} /> */}
-                    {/* <Route path='/LeaderBoard' component={LeaderBoard} /> */}
+                    <Route path='/LeaderBoard' component={LeaderBoard} />
                     
                     <Route path='/score' component={Score} />
                     <Route><NotFound /></Route>
