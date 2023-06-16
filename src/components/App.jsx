@@ -7,7 +7,7 @@ import Admin from './Admin'
 import Instructions from './Instructions'
 import AdminAuth from './AdminAuth'
 import NotFound from './NotFound'
-import './App.css';
+// import './App.css';
 import Score from './Score'
 import Loginpage from './Loginpage'
 import ReactRegistrationPage from './RegistrationPage'
