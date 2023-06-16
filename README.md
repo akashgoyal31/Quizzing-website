@@ -1,1 +1,1 @@
-# Quizzers' Club MANIT online test platform.
+# Quizzers' Club NIT Bhopal online test platform.
