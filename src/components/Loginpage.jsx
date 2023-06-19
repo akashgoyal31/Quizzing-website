@@ -40,18 +40,19 @@ const Login = () => {
   const signIn = (e) => {
     e.preventDefault();
 
-    firebaseApp.firestore().collection("Users").where('dob', '==', password).onSnapshot((snapshot) => {
+    firebaseApp.firestore().collection("Users").where('email', '==', email).onSnapshot((snapshot) => {
       let items = [];
       snapshot.forEach((doc) => items.push(doc.data()));
-      // console.log([{email}][0].email);
-      // console.log(items[0].email);
+      console.log(items);
+      // console.log(items[0].dob);
+      // console.log(password);
       // items[0].quiznottaken = true;
       if (email === "" || password === "") {
         setMessage(<p style={{ 'color': '#E63946', 'textAlign': 'center' }}>Fill all the details first.</p>);
         setTimeout(() => {
           setMessage("");
         }, 2000);
-      } else if ((items.length) && (items[0].email === [{ email }][0].email) && (items[0].quiznottaken)) {
+      } else if ((items.length) && (items[0].dob === password) && (items[0].quiznottaken)) {
       
 
         history.push('/instructions');

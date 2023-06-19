@@ -4,7 +4,7 @@ import SocialMedia from './SocialMedia'
 export default function Brand(){
     return <div className="brand">
            <div> Quizzers' Club 
-            <span style={{'opacity':'1','color':'#E63946', 'fontSize':'1.6rem'}}>MANIT</span>
+            <span style={{'opacity':'1','color':'#E63946', 'fontSize':'1.6rem'}}>NIT Bhopal</span>
             </div> 
             {/* <br /> */}
             <SocialMedia />

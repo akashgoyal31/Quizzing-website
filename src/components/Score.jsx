@@ -83,7 +83,7 @@ export default function Score() {
                 V<span style={{'fontSize':'2.5rem'}}>I</span>H<span style={{'fontSize':'2.5rem'}}>AA</span>N
             </h1> */}
                 <h1 style={{ 'color': '#EFB90A', 'fontWeight': 'bolder', 'textAlign': 'center', 'fontSize': '3rem' }}>
-                G<span style={{'fontSize':'2.5rem'}}>Y</span>AA<span style={{'fontSize':'2.5rem'}}>N </span>T<span style={{'fontSize':'2.5rem'}}>RI</span>V<span style={{'fontSize':'2.5rem'}}>I</span>A
+                Intercity <span style={{'fontSize':'2.5rem'}}>Quiz</span>
                     {/* V<span style={{ 'fontSize': '2.5rem' }}>I</span>H<span style={{ 'fontSize': '2.5rem' }}>A</span><span style={{ 'fontSize': '2.5rem' }}>AN</span> */}
                 </h1>
                 <div className="d-flex justify-content-center">
