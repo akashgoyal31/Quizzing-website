@@ -86,11 +86,12 @@ export default function Quiz() {
   //Submit test function on clicking submit button
   const submitTest = () => {
     numbers.map((number) => {
-      for (let n = 0; n < 3; n++) {
+      for (let n = 0; n < 4; n++) {
         const input = document.getElementsByName("answer" + (number))[n];
         console.log(input);
         if (input.checked === true) {
           //Storing the user responses into the database
+          
           if (ques[number - 1].ans === input.value) {
             firebaseApp.firestore().collection("AnswerBank/" + sessionStorage.getItem("name") + "-" + sessionStorage.getItem("dob") + "/Answers").doc("answer" + (number < 10 ? "0" + number : number)).set({
               actualAns: ques[number - 1].ans,
@@ -137,7 +138,7 @@ export default function Quiz() {
       <div className="grid-container">
         <div style={{ 'padding': '25px 25px' }} className="grid-item">
           <h3 style={{ 'color': '#EFB90A', 'fontWeight': 'bolder', 'textAlign': 'left', 'fontSize': '1.3rem' }}>
-          G<span style={{'fontSize':'1rem'}}>Y</span>AA<span style={{'fontSize':'1rem'}}>N </span>T<span style={{'fontSize':'1rem'}}>RI</span>V<span style={{'fontSize':'1rem'}}>I</span>A
+          Intercity <span style={{'fontSize':'1.3rem'}}>Quiz </span>
             {/* V<span style={{'fontSize':'1rem'}}>I</span>H<span style={{'fontSize':'1rem'}}>AA</span>N<span style={{'fontSize':'1rem'}}>'23</span> */}
             {/* R<span style={{ 'fontSize': '1rem' }}>E</span>C<span style={{ 'fontSize': '1rem' }}>R</span>U<span style={{ 'fontSize': '1rem' }}>ITMENTS</span> */}
 
@@ -288,9 +289,9 @@ export default function Quiz() {
         <div style={{ 'padding': '20px' }}>
           In case of any queries, call -
           <br />
-          Ritik : +91 7004399783
+          Akash : +91 6375059551
           <br />
-          Kiran : +91 9057628755
+          Abhay : +91 6261894289
         </div>
       </Popover>
       {/* popover --- help */}

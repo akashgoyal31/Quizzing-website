@@ -124,6 +124,7 @@ import { auth, createUserDocument } from "../firebase";
 import Event from "./Event";
 import Brand from "./Brand";
 import { useState } from 'react'
+import SocialMedia from "./SocialMedia";
 
 class ReactRegistrationPage extends Component {
 
@@ -201,7 +202,7 @@ class ReactRegistrationPage extends Component {
           < div className="d-flex justify-content-center">
             <form action="#" className="grid" onSubmit={this.handlesubmit}>
               <div>
-                <label htmlFor="name " >Name</label>
+                <label className="label-register" htmlFor="name " >Name</label>
                 <input
                   type="text"
                   name="Name"
@@ -213,7 +214,7 @@ class ReactRegistrationPage extends Component {
                 />
               </div>
               <div>
-                <label htmlFor="std" >Class</label>
+                <label className="label-register" htmlFor="std" >Class</label>
                 <input
                   type="number"
                   name="std"
@@ -225,18 +226,19 @@ class ReactRegistrationPage extends Component {
                 />
               </div>
               <div>
-                <label htmlFor="school">School</label>
+                <label className="label-register" htmlFor="school">School</label>
                 <input
                   type="text"
                   name="school"
                   value={school}
                   onChange={this.handlechange}
                   id="school"
+                  required
                   placeholder=" enter school name"
                 />
               </div>
               <div>
-                <label htmlFor="phone">Contact</label>
+                <label className="label-register" htmlFor="phone">Contact</label>
                 <input
                   type="tel"
                   name="phone"
@@ -248,18 +250,19 @@ class ReactRegistrationPage extends Component {
                 />
               </div>
               <div>
-                <label htmlFor="altPhone">Alternate Contact</label>
+                <label className="label-register" htmlFor="altPhone">Alternate Contact</label>
                 <input
                   type="tel"
                   name="altphone"
                   value={altphone}
                   onChange={this.handlechange}
                   id="altPhone"
+                  required
                   placeholder="alternate number"
                 />
               </div>
               <div>
-                <label id="email-label" htmlFor="email">
+                <label className="label-register" id="email-label" htmlFor="email">
                   Email
                 </label>
                 <input
@@ -269,13 +272,14 @@ class ReactRegistrationPage extends Component {
                   onChange={this.handlechange}
                   spellCheck="false"
                   id="email"
+                  required
                   placeholder="email address"
                 // onkeyup="validateEmail()"
                 />
 
               </div>
               <div>
-                <label htmlFor="place">City</label>
+                <label className="label-register" htmlFor="place">City</label>
                 <input
                   type="text"
                   name="place"
@@ -283,15 +287,17 @@ class ReactRegistrationPage extends Component {
                   onChange={this.handlechange}
                   id="place"
                   placeholder="city name"
+                  required
                 />
               </div>
               <div>
-                <label htmlFor="dob">Birth Date</label>
+                <label className="label-register" htmlFor="dob">Birth Date</label>
                 <input
                   type="date"
                   required
                   name="dob"
                   id="dob"
+                  
                   value={dob}
                   onChange={this.handlechange}
                 />
@@ -312,8 +318,18 @@ class ReactRegistrationPage extends Component {
 
           </div >
 
+        {/* <Brand /> */}
+        <div className="brand" style={{'top' : '169%'}}>
+           <div> Quizzers' Club 
+            <span style={{'opacity':'1','color':'#E63946', 'fontSize':'1.6rem'}}>NIT Bhopal</span>
+            </div> 
+            {/* <br /> */}
+            <SocialMedia />
+            {/* <p>© All Rights reserved. Quizzers' Club MANIT 2021</p>
+            <p><a href="https://www.linkedin.com/in/aman-malviya-5347871b1">Aman Malviya</a> & <a href="https://www.linkedin.com/in/yash-gupta-aa5656193/">Yash Gupta</a> </p> */}
         </div>
-        <Brand />
+
+        </div>
       </>
     );
   }

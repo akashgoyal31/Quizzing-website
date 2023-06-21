@@ -4,7 +4,7 @@ import Event from './Event'
 import TestNotStarted from './TestNotStarted'
 import { useHistory } from 'react-router-dom'
 import firebaseApp from '../firebase'
-import Reactlogin from './Login'
+// import Reactlogin from './Login'
 export default function Loginpage() {
   return (
     <div className="landing-page">
@@ -82,7 +82,7 @@ const Login = () => {
   }
 
   return (
-    <div className='landing-page'>
+    <div className='landing-pages'>
       <Event />
       <div style={{ 'color': 'rgb(255 255 255)', 'padding': '2% 10% ', 'textAlign': 'justify', 'textAlignLast': 'center' }}>
         <p>Attention freshers!!
@@ -105,7 +105,8 @@ const Login = () => {
 
 
         <br />
-        <p style={{ 'color': '#f1faee', 'textAlign': 'center' }}>If you face any issue, feel free to call <br />Ritik : +91 7004399783<br /> Kiran : +91 9057628755</p>
+        <p style={{ 'color': '#f1faee', 'textAlign': 'center' }}>If you face any issue, feel free to call <br />Akash : +91 6375059551<br /> Abhay : +91 6261894289</p>
+        
       </div>
         :
         <TestNotStarted />

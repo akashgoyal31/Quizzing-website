@@ -82,7 +82,15 @@ label {
   font-size: 1rem;
   display: inline-block;
     margin: 1rem auto;
-    color: #cbc8c8;
+    color: #f5f1eb;
+}
+.label-register {
+  padding: 1px 0;
+  width: 100%;
+  font-size: 1rem;
+  display: inline-block;
+    margin: 1rem auto;
+    color: #d9a200;
 }
 
 input[type="radio"] {
@@ -192,7 +200,7 @@ input[type="radio"]:checked~.option span {
 .landing-page {
   padding: 40px 0 0px 0;
   background: url("./bg-landing.png");
-  min-height: 100vh;
+  min-height: 30vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -291,9 +299,9 @@ input[type="radio"]:checked~.option span {
   border: 2px solid #EFB90A;
 }
 
-.brand {
+/* .brand {
   position: absolute;
-  /* top: 150%; */
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -307,6 +315,24 @@ input[type="radio"]:checked~.option span {
   font-size: 1.6rem;
   padding: 15px 0;
   border-radius: 10px 10px 0 0;
+} */
+.brand {
+  position: absolute;
+  top: 90%;
+  display: flex;
+  
+  height: 70px;
+  width: 100%;
+  background-color: #a7ccff0f;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.6rem;
+  padding: 15px 0;
+  border-radius: 10px 10px 0 0;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .brand p {
