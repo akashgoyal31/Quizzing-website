@@ -3,7 +3,8 @@ import Brand from './Brand'
 import Event from './Event'
 import TestNotStarted from './TestNotStarted'
 import { useHistory } from 'react-router-dom'
-import firebaseApp from '../firebase'
+import firebaseApp  from '../firebase'
+
 // import Reactlogin from './Login'
 export default function Loginpage() {
   return (
@@ -42,9 +43,14 @@ const Login = () => {
 
     firebaseApp.firestore().collection("Users").where('email', '==', email).onSnapshot((snapshot) => {
       let items = [];
-      snapshot.forEach((doc) => items.push(doc.data()));
+      let userid ; 
+      snapshot.forEach((doc) => {
+        items.push(doc.data()) ;
+        userid = doc.id  ; 
+      });
       console.log(items);
-      // console.log(items[0].dob);
+      // console.log(userid);
+      // console.log(items[0].quiznottaken);
       // console.log(password);
       // items[0].quiznottaken = true;
       if (email === "" || password === "") {
@@ -56,7 +62,8 @@ const Login = () => {
       
 
         history.push('/instructions');
-        items[0].quiznottaken = false;
+        // items[0].quiznottaken = false;
+        firebaseApp.firestore().collection("Users").doc(userid).update({quiznottaken: false});
         console.log(items[0].quiznottaken);
         // items[0].quiznottaken=false;
         sessionStorage.setItem("name", email);
