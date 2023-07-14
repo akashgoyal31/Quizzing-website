@@ -1,1 +1,1 @@
-# Quizzers' Club NIT Bhopal online test platform.
+# online Quiz test platform.
