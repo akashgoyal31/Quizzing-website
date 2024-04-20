@@ -28,8 +28,8 @@ export default function App() {
             <Router>
                 <Switch>
                     {/* <Route path='/' exact><Landing /></Route> */}
-                    {/* <Route path='/' exact><ReactRegistrationPage/></Route> */}
                     <Route path='/' exact><Loginpage /></Route>
+                    <Route path='/registration-page' exact><ReactRegistrationPage/></Route>
                     {/* <Route path='/Loginpage' exact><Loginpage /></Route> */}
                     {/* <Route path='/verification'><Otp /></Route> */}
                     <Route path='/admin-login'><AdminAuth /></Route>

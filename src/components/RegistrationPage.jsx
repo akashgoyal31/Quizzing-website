@@ -1,131 +1,14 @@
-// import React, { Component } from "react";
-// import Event from './Event';
-// import Brand from './Brand';
-
-// import {auth} from '../firebase/auth';
-// import { createUserWithEmailAndPassword } from "firebase/auth";
-// import { auth, createUserDocument } from "../firebase";
-// export default function RegistrationPage(){
-
-//       //  const [text, setText]=useState("");
-
-//     // const [email,setEmail]=useState("");         //email
-//     // const [password,setPassword]= useState("");  //mobile
-//     // const [first,setFirst]=useState("");         //first name
-//     // const [sec,setSec]=useState("");             //last name
-//     // const [scholar,setScholar]=useState("");     //scholar no.
-
-//     // const handleChange=(e)=>{
-//     //     setText(e.target.value);
-//     // }
-
-
-//       state = {
-//         Name: "",
-//         std: "",
-//         school: "",
-//         place: "",
-//         phone: "",
-//         altphone: "",
-//         dob: "",
-//         email: "",
-
-//       };
-
-//       handlechange = (e) => {
-//         const { name, value } = e.target;
-
-//         this.setState({ [name]: value });
-//       };
-
-//       handlesubmit = async (e) => {
-//         e.preventDefault();
-//         console.log(this.state);
-//         const { Name, std, school, place, phone, altphone, dob, email  } =
-//         this.state;
-//         try {
-//           const { user } = await auth.createUserWithEmailAndPassword( email, dob);
-//           console.log(user);
-//           alert("you sucessfully registed");
-//           await createUserDocument(user, {
-//             school,
-//             place,
-//             Name,
-//             std,
-//             phone,
-//             altphone,
-//             dob,
-
-//           });
-//           // await createUsersDocument(user, { school });
-//         } catch (error) {
-//           console.log("error", error);
-//         }
-
-//         this.setState({
-//           Name: "",
-//           email: "",
-//           dob: "",
-//           place: "",
-//           std: "",
-//           school: "",
-//           phone: "",
-//           altphone: "",
-
-
-//         });
-//       };
-//     return(<div style={window.innerWidth<500?{'paddingBottom':'35%'}:{'paddingBottom':'15%'}} className="landing-page">
-//         {/* {/* <h1 style={{'color':'#E63946', 'fontWeight':'bolder', 'textAlign':'center','fontSize':'3rem'}}>
-//             V<span style={{'fontSize':'2.5rem'}}>I</span>H<span style={{'fontSize':'2.5rem'}}>AA</span>N
-//         </h1>
-//         <div style={{'color':'#f1faee', 'padding':'2% 10%', 'textAlign':'center'}}>
-//             <p>VIHAAN is QCM's opening event for session( It take place even before fresher's evening). The event is organized for the first year students to participate , learn and to let them know what awaits them in future. VIHAAN is a platform for the students, amateurs, quizzers and newcomers to mettle in quizzing.</p>
-//         </div>
-//          */}
-//          {/* <Event /> */}
-//          <Event />
-//         <h3>Hello {text} !</h3>
-//         {/* <div className="d-flex justify-content-center">
-//             <div>
-//                 <input onChange={handleChange} type="text" placeholder="First Name" />
-//                 <input value={sec} onChange={event=>setSec(event.target.value)} type="text" placeholder="Last Name" />
-//                 <select>
-//                     <option>Executive</option>
-//                     <option>Quizzer</option>
-//                     <option>Web Developer</option>
-//                     <option>Content Writer</option>
-//                     <option>Photographer</option>
-//                 </select>
-//                 <input value ={email} onChange={event=>setEmail(event.target.value)} type="email" placeholder="Email Address" />
-//                 <input value={password} onChange={event=>setPassword(event.target.value)} type="tel" placeholder="Mobile Number" />
-//                 <input value={scholar} onChange={event=>setScholar(event.target.value)} type="number" placeholder="Scholar Number" />
-//                 <input type="text" placeholder="First Name" />
-//                 <input type="text" placeholder="First Name" />
-//                 <input type="text" placeholder="First Name" />
-//             </div>
-//         </div> */}
-//         {/* <div className="d-flex justify-content-center"><a href="/verification"><button>Register</button></a></div> */}
-//         <Brand/>
-//         {/* <div className="brand">
-//             Quizzers' Club
-//             <br />
-//             <span style={{'color':'#E63946', 'fontSize':'1.4rem'}}>MANIT</span>
-//         </div>  */}
-//     </div>)
-// }
 
 
 
 import React, { Component } from "react";
-// import {auth} from '../firebase/auth';
-// import { createUserWithEmailAndPassword } from "firebase/auth";
+
 import { auth, createUserDocument } from "../firebase";
 import Event from "./Event";
 import Brand from "./Brand";
 import { useState } from 'react'
 import SocialMedia from "./SocialMedia";
-
+import { Link } from 'react-router-dom'
 class ReactRegistrationPage extends Component {
 
 
@@ -317,16 +200,16 @@ class ReactRegistrationPage extends Component {
             </form>
 
           </div >
+          <br/>
+            <div className="d-flex justify-content-center" style={{color: "white" , marginTop:"10px"}} >Already have an account? <Link style={{color: "orange" , marginLeft:"10px" , textDecoration:"underline" }} to= "/" > Login ! </Link> </div>
 
         {/* <Brand /> */}
-        <div className="brand" style={{'top' : '169%'}}>
+        <div className="brand" style={{'top' : '190%'}}>
            <div> Quizzers' Club 
             <span style={{'opacity':'1','color':'#E63946', 'fontSize':'1.6rem'}}>NIT Bhopal</span>
             </div> 
             {/* <br /> */}
             <SocialMedia />
-            {/* <p>© All Rights reserved. Quizzers' Club MANIT 2021</p>
-            <p><a href="https://www.linkedin.com/in/aman-malviya-5347871b1">Aman Malviya</a> & <a href="https://www.linkedin.com/in/yash-gupta-aa5656193/">Yash Gupta</a> </p> */}
         </div>
 
         </div>

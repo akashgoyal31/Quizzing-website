@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { LinearProgress } from '@material-ui/core'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import { Redirect } from "react-router-dom"
 
 
@@ -9,7 +9,7 @@ export default function Instructions() {
     console.log(token);
     const submitTime = sessionStorage.getItem("submitTime");
     const [loading, setLoading] = useState(true);
-    const theme = createMuiTheme({
+    const theme = createTheme({
         palette: {
             primary: {
                 main: "#06d6a0",

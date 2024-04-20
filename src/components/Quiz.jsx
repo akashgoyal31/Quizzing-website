@@ -3,7 +3,7 @@ import Timer from './Timer';
 import firebaseApp from '../firebase'
 import { useHistory, Redirect } from 'react-router-dom'
 import { LinearProgress, Popover } from '@material-ui/core'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 
 export default function Quiz() {
 
@@ -116,7 +116,7 @@ export default function Quiz() {
   //Loading Component
   const [loading, setLoading] = useState(true);
   //Loading Component Theme
-  const theme = createMuiTheme({
+  const theme = createTheme({
     palette: {
       primary: {
         main: "#06d6a0",
@@ -290,8 +290,7 @@ export default function Quiz() {
           In case of any queries, call -
           <br />
           Akash : +91 6375059551
-          <br />
-          Abhay : +91 6261894289
+       
         </div>
       </Popover>
       {/* popover --- help */}

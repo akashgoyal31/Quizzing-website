@@ -318,7 +318,7 @@ input[type="radio"]:checked~.option span {
 } */
 .brand {
   position: absolute;
-  top: 90%;
+  top: 95%;
   display: flex;
   
   height: 70px;
@@ -349,7 +349,25 @@ input[type="radio"]:checked~.option span {
 .brand span {
   margin-left: 10px;
 }
-
+@media only screen and (max-width: 680px) {
+  .brand {
+    position: absolute;
+    top: 110%;
+    display: flex;
+    height: 134px;
+    width: 100%;
+    background-color: #a7ccff0f;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+    padding: 15px 0;
+    border-radius: 10px 10px 0 0;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
 @media(max-width:600px) {
   .landing-page {
     background-position: right;
@@ -373,11 +391,7 @@ input[type="radio"]:checked~.option span {
   }
 }
 
-@media(max-height:500px) {
-  .brand {
-    display: none;
-  }
-}
+
 
 /* Remove increment decrement in input type number */
 input::-webkit-outer-spin-button,

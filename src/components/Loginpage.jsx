@@ -4,7 +4,8 @@ import Event from './Event'
 import TestNotStarted from './TestNotStarted'
 import { useHistory } from 'react-router-dom'
 import firebaseApp  from '../firebase'
-
+import { colors } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 // import Reactlogin from './Login'
 export default function Loginpage() {
   return (
@@ -71,7 +72,7 @@ const Login = () => {
         sessionStorage.setItem("auth", true);
 
       }
-      else if (!(items[0].quiznottaken)) {
+      else if ((items.length)&& (!(items[0].quiznottaken))) {
         setMessage(<p style={{ 'color': '#E63946', 'textAlign': 'center' }}>test already taken</p>)
         setTimeout(() => {
           setMessage("")
@@ -109,10 +110,11 @@ const Login = () => {
             </div>
           </div>
         </div>
+        <div className="d-flex justify-content-center" style={{color: "white" , marginTop:"10px"}}>Don't have an account? <Link style={{color: "orange" , marginLeft:"10px" , textDecoration:"underline" }} to= "/registration-page" > Register Now ! </Link> </div>
 
 
         <br />
-        <p style={{ 'color': '#f1faee', 'textAlign': 'center' }}>If you face any issue, feel free to call <br />Akash : +91 6375059551<br /> Abhay : +91 6261894289</p>
+        <p style={{ 'color': '#f1faee', 'textAlign': 'center' }}>If you face any issue, feel free to call <br />Akash : +91 6375059551</p>
         
       </div>
         :
