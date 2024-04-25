@@ -196,7 +196,7 @@ export default function Quiz() {
                 {ques.map((qv, i) => {
                   return (<div className="carousel-item">
                     <div className="question" style={{ 'whiteSpace': 'pre-wrap' }}>
-                      <p style={{ 'margin': '5px 0' }}>{"Question  " + (i + 1)} / <span style={{ 'fontSize': '0.8rem' }}>25</span></p>
+                      <p style={{ 'margin': '5px 0' }}>{"Question  " + (i + 1)} / <span style={{ 'fontSize': '1rem' }}>30</span></p>
                       <div style={{ 'height': '0', 'borderTop': '1px dashed rgba(69, 123, 157,0.5)', 'marginBottom': '5px' }}></div><br />
                       <p>{qv.que}</p>
                       <br />
