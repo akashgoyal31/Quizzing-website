@@ -21,13 +21,16 @@ export default function Quiz() {
 
   const history = useHistory();
   const token = sessionStorage.getItem("auth");
-  const numbers = [1];
+  // const [numbers ,  setNumbers]   = useState([]) ;  
+  const numbers = [1 , 2 ,3,4,5,6,7,8,9,10 ,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+  // const numbers = [1 , 2 ,3,4,5,6];
+  // const numbers = [1 , 2];
 
   //useState hook to highlight the corresponding question toggle button
   let [active, setActive] = useState(0);
   //Increment on pushing next button
   const increment = () => {
-    if (active !== 1) {
+    if (active !== 30) {
       setActive(active + 1);
     }
   }
@@ -68,7 +71,10 @@ export default function Quiz() {
   //useEffect for fetching questions from the database
   const [ques, setQues] = useState([]);
   useEffect(() => {
+    // var cnt  = 0 ;  
     firebaseApp.firestore().collection("Questions").limit(30).onSnapshot(snapshot => {
+      // cnt++ ; 
+      // setNumbers([...numbers , cnt])
       setQues(
         snapshot.docs.map(doc => ({
           que: doc.data().question,
@@ -80,6 +86,7 @@ export default function Quiz() {
         }))
       )
     })
+    // console.log(cnt);
   }
     , [])
 
@@ -138,7 +145,7 @@ export default function Quiz() {
       <div className="grid-container">
         <div style={{ 'padding': '25px 25px' }} className="grid-item">
           <h3 style={{ 'color': '#EFB90A', 'fontWeight': 'bolder', 'textAlign': 'left', 'fontSize': '1.3rem' }}>
-          Intercity <span style={{'fontSize':'1.3rem'}}>Quiz </span>
+            Quizzers' Recruitment <span style={{'fontSize':'1.3rem'}}>Round 1 </span>
             {/* V<span style={{'fontSize':'1rem'}}>I</span>H<span style={{'fontSize':'1rem'}}>AA</span>N<span style={{'fontSize':'1rem'}}>'23</span> */}
             {/* R<span style={{ 'fontSize': '1rem' }}>E</span>C<span style={{ 'fontSize': '1rem' }}>R</span>U<span style={{ 'fontSize': '1rem' }}>ITMENTS</span> */}
 
@@ -290,7 +297,8 @@ export default function Quiz() {
           In case of any queries, call -
           <br />
           Akash : +91 6375059551
-       
+          <br/>
+          Abhay : +91 6261894289
         </div>
       </Popover>
       {/* popover --- help */}

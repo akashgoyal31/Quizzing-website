@@ -26,23 +26,16 @@ export default firebaseApp;
       const { email } = user;
       const {dob}    = additionalData;
       const { Name} = additionalData;
-      const { school} = additionalData;
-     const { place } = additionalData;
-        const { std } = additionalData;
-       const { phone } = additionalData;
-        const { altphone } = additionalData;
-      
-  
+      const { section} = additionalData;
+     const { scholarNo} = additionalData;
       try {
         userRef.set({
           Name,
-          school,
-            std,
-           phone,
-         altphone,
+         section,
+         scholarNo,
           email,
           dob,
-           place,
+          
            quiznottaken :true ,
           createdAt: new Date(),
         });

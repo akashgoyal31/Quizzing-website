@@ -68,7 +68,8 @@ export default function Score() {
     //Store the points in the database
     db.collection("scores").doc(sessionStorage.getItem("name") + "-" + sessionStorage.getItem("dob")).set({
         points: points,
-        name: sessionStorage.getItem("name") + "-" + sessionStorage.getItem("dob")
+        // name: sessionStorage.getItem("name") + "-" + sessionStorage.getItem("dob")
+        name: sessionStorage.getItem("user") + "-" + sessionStorage.getItem("name")
     }).then(() => {
         setLoading(false);
     })
@@ -83,7 +84,7 @@ export default function Score() {
                 V<span style={{'fontSize':'2.5rem'}}>I</span>H<span style={{'fontSize':'2.5rem'}}>AA</span>N
             </h1> */}
                 <h1 style={{ 'color': '#EFB90A', 'fontWeight': 'bolder', 'textAlign': 'center', 'fontSize': '3rem' }}>
-                Intercity <span style={{'fontSize':'2.5rem'}}>Quiz</span>
+                 Quizzers' Recruitment <span style={{'fontSize':'2.5rem'}}>Round 1</span>
                     {/* V<span style={{ 'fontSize': '2.5rem' }}>I</span>H<span style={{ 'fontSize': '2.5rem' }}>A</span><span style={{ 'fontSize': '2.5rem' }}>AN</span> */}
                 </h1>
                 <div className="d-flex justify-content-center">
@@ -101,6 +102,7 @@ export default function Score() {
                     <a href="/"><button style={{ 'borderRadius': '8px', 'width': '250px' }} onClick={() => {
                         sessionStorage.removeItem("dob");
                         sessionStorage.removeItem("name");
+                        sessionStorage.removeItem("user");
                     }}>Go to Home Page</button></a>
                 </div>
             </div>

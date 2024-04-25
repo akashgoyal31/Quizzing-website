@@ -5,22 +5,18 @@ import React, { Component } from "react";
 
 import { auth, createUserDocument } from "../firebase";
 import Event from "./Event";
-import Brand from "./Brand";
-import { useState } from 'react'
 import SocialMedia from "./SocialMedia";
 import { Link } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 class ReactRegistrationPage extends Component {
 
 
   state = {
     Name: "",
-    std: "",
-    school: "",
-    place: "",
-    phone: "",
-    altphone: "",
-    dob: "",
+    scholarNo: "",
+    section: "",
     email: "",
+    dob: "",
 
   };
 
@@ -33,44 +29,40 @@ class ReactRegistrationPage extends Component {
   handlesubmit = async (e) => {
     e.preventDefault();
     console.log(this.state);
-    const { Name, std, school, place, phone, altphone, dob, email } =
+    const { Name, scholarNo, section, email, dob } =
       this.state;
     try {
       const { user } = await auth.createUserWithEmailAndPassword(email, dob);
       console.log(user);
       alert("you sucessfully registed");
       await createUserDocument(user, {
-        school,
-        place,
         Name,
-        std,
-        phone,
-        altphone,
-        dob,
+         scholarNo,
+          section,
+           email,
+            dob
 
       });
       // await createUsersDocument(user, { school });
     } catch (error) {
+      alert("Email id Already exist used differnt Email id");
       console.log("error", error);
-   
+
     }
 
     this.setState({
       Name: "",
+      scholarNo: "",
+      section: "",
       email: "",
       dob: "",
-      place: "",
-      std: "",
-      school: "",
-      phone: "",
-      altphone: "",
 
 
     });
   };
 
   render() {
-    const { Name, std, school, phone, altphone, email, place, dob } =
+    const { Name, scholarNo, section, email, dob } =
       this.state;
     // this.setState({ [quiznottaken]: true });
     // const [message, setMessage] = useState('');
@@ -97,53 +89,30 @@ class ReactRegistrationPage extends Component {
                 />
               </div>
               <div>
-                <label className="label-register" htmlFor="std" >Class</label>
+                <label className="label-register" htmlFor="std" >Scholar No</label>
                 <input
                   type="number"
-                  name="std"
-                  value={std}
+                  name="scholarNo"
+                  value={scholarNo}
                   onChange={this.handlechange}
-                  id="std"
+                  id="scholarNo"
                   required
-                  placeholder="enter your class"
+                  placeholder="enter your Scholar no."
                 />
               </div>
               <div>
-                <label className="label-register" htmlFor="school">School</label>
+                <label className="label-register" htmlFor="school">Section</label>
                 <input
                   type="text"
-                  name="school"
-                  value={school}
+                  name="section"
+                  value={section}
                   onChange={this.handlechange}
-                  id="school"
+                  id="section"
                   required
-                  placeholder=" enter school name"
+                  placeholder=" enter your section"
                 />
               </div>
-              <div>
-                <label className="label-register" htmlFor="phone">Contact</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={phone}
-                  onChange={this.handlechange}
-                  id="phone"
-                  required
-                  placeholder="contact number"
-                />
-              </div>
-              <div>
-                <label className="label-register" htmlFor="altPhone">Alternate Contact</label>
-                <input
-                  type="tel"
-                  name="altphone"
-                  value={altphone}
-                  onChange={this.handlechange}
-                  id="altPhone"
-                  required
-                  placeholder="alternate number"
-                />
-              </div>
+              
               <div>
                 <label className="label-register" id="email-label" htmlFor="email">
                   Email
@@ -161,18 +130,7 @@ class ReactRegistrationPage extends Component {
                 />
 
               </div>
-              <div>
-                <label className="label-register" htmlFor="place">City</label>
-                <input
-                  type="text"
-                  name="place"
-                  value={place}
-                  onChange={this.handlechange}
-                  id="place"
-                  placeholder="city name"
-                  required
-                />
-              </div>
+              
               <div>
                 <label className="label-register" htmlFor="dob">Birth Date</label>
                 <input
@@ -180,37 +138,37 @@ class ReactRegistrationPage extends Component {
                   required
                   name="dob"
                   id="dob"
-                  
+
                   value={dob}
                   onChange={this.handlechange}
                 />
               </div>
               <div className="d-flex justify-content-center register-btn">
                 <input
-              
+
                   className="btn"
                   type="submit"
                   value="Register"
                 // onClick={Register()}
                 />
-            {/* <div>
+                {/* <div>
               {message}
             </div> */}
               </div>
             </form>
 
           </div >
-          <br/>
-            <div className="d-flex justify-content-center" style={{color: "white" , marginTop:"10px"}} >Already have an account? <Link style={{color: "orange" , marginLeft:"10px" , textDecoration:"underline" }} to= "/" > Login ! </Link> </div>
+          <br />
+          <div className="d-flex justify-content-center" style={{ color: "white", marginTop: "10px" }} >Already have an account? <Link style={{ color: "orange", marginLeft: "10px", textDecoration: "underline" }} to="/" > Login ! </Link> </div>
 
-        {/* <Brand /> */}
-        <div className="brand" style={{'top' : '190%'}}>
-           <div> Quizzers' Club 
-            <span style={{'opacity':'1','color':'#E63946', 'fontSize':'1.6rem'}}>NIT Bhopal</span>
-            </div> 
+          {/* <Brand /> */}
+          <div className="brand" style={{ 'top': '190%' }}>
+            <div> Quizzers' Club
+              <span style={{ 'opacity': '1', 'color': '#E63946', 'fontSize': '1.6rem' }}>NIT Bhopal</span>
+            </div>
             {/* <br /> */}
             <SocialMedia />
-        </div>
+          </div>
 
         </div>
       </>
