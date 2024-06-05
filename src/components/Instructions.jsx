@@ -89,7 +89,7 @@ export default function Instructions() {
 
                 <a style={{'marginTop': '1vmax', 'marginBottom': '1vmax' }} className="d-flex justify-content-center" href="/quiz">
                     <button onClick={() =>
-                        sessionStorage.setItem("submitTime", new Date().getTime() + 1504000)
+                        sessionStorage.setItem("submitTime", new Date().getTime() + 1804000)
                     } style={{ 'borderRadius': '8px', 'width': 'fit-content', 'padding': '1vmax 2vmax', 'fontSize': '1.1rem'}}>
                         Proceed
                     </button>

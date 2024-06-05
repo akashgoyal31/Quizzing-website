@@ -25,13 +25,13 @@ const Login = () => {
 
 
   //Render Form based on time
-  const [render, setRender] = useState(false);
+  const [render, setRender] = useState(true);
   const bypass = useLocation().search === "?letmepass";
   useEffect(() => {
     let d = new Date().getTime();
     // format  year  , month index ,  day ,  hours ,  minute  ,  second  ,  milisecond  
-    let startSlot1 = new Date(2024, 3, 26, 21, 30, 0, 0).getTime();
-    let endSlot1 = new Date(2024, 3, 26, 22, 30, 0, 0).getTime();
+    let startSlot1 = new Date(2024, 4, 7, 21, 30, 0, 0).getTime();
+    let endSlot1 = new Date(2024, 4, 7, 22, 15, 0, 0).getTime();
     if ((d >= startSlot1 && d < endSlot1 || bypass)) {
       setRender(true);
     }
@@ -117,8 +117,7 @@ const Login = () => {
 
 
         <br />
-        <p style={{ 'color': '#f1faee', 'textAlign': 'center' }}>If you face any issue, feel free to call <br />Akash : +91 6375059551 <br />
-          Abhay : +91 6261894289</p>
+        <p style={{ 'color': '#f1faee', 'textAlign': 'center' }}>If you face any issue, feel free to call <br />Akash : +91 6375059551 </p>
 
       </div>
         :

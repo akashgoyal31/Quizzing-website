@@ -137,6 +137,13 @@ export default function Quiz() {
     setLoading(false);
   }, 3000);
 
+  const clearResponse = (questionNumber,e) => {
+     
+    const inputs = document.querySelectorAll(`input[name="answer${questionNumber}"]`);
+    inputs.forEach(input => {
+      input.checked = false;
+    });
+  };
   return (loading ?
     <ThemeProvider theme={theme}>
       <LinearProgress />
@@ -210,6 +217,7 @@ export default function Quiz() {
                             name={"answer" + (i + 1)}
                             className={"answer" + (i + 1)}
                             value="A"
+                        
                           />
                           <label className="option grid-c" htmlFor={(i + 1) + "_a"}>
                             <span>A</span>{qv.opta}
@@ -222,6 +230,7 @@ export default function Quiz() {
                             name={"answer" + (i + 1)}
                             className={"answer" + (i + 1)}
                             value="B"
+                         
                           />
                           <label className="option grid-c" htmlFor={(i + 1) + "_b"}>
                             <span>B</span>{qv.optb}</label>
@@ -233,6 +242,7 @@ export default function Quiz() {
                             name={"answer" + (i + 1)}
                             className={"answer" + (i + 1)}
                             value="C"
+                        
                           />
                           <label className="option grid-c" htmlFor={(i + 1) + "_c"}>
                             <span>C</span>{qv.optc}
@@ -245,6 +255,7 @@ export default function Quiz() {
                             name={"answer" + (i + 1)}
                             className={"answer" + (i + 1)}
                             value="D"
+                      
                           />
                           <label className="option grid-c" htmlFor={(i + 1) + "_d"}>
                             <span>D</span>{qv.optd}
@@ -252,6 +263,10 @@ export default function Quiz() {
                         </li>
                       </ul>
                     </div>
+                    <button style={{ 'borderRadius': '8px', 'width': 'fit-content', 'padding': '0.5vmax 1vmax', 'fontSize': '1.1rem'}} onClick={(e) =>{
+                     e.preventDefault();
+                        clearResponse(i + 1)
+                    }}>Clear Response</button>
                   </div>)
                 })}
               </div>
@@ -297,8 +312,7 @@ export default function Quiz() {
           In case of any queries, call -
           <br />
           Akash : +91 6375059551
-          <br/>
-          Abhay : +91 6261894289
+        
         </div>
       </Popover>
       {/* popover --- help */}
