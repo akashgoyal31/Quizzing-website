@@ -6,7 +6,6 @@ export default function Brand(){
            <div> Quizzers' Club 
             <span style={{'opacity':'1','color':'#E63946', 'fontSize':'1.6rem'}}>NIT Bhopal</span>
             </div> 
-
             <SocialMedia />
            
         </div>

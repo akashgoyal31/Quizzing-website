@@ -58,34 +58,7 @@ export default function Instructions() {
                     </div>
                 </div>
 
-                {/* <div style={{ 'fontSize': '1.2vmax', 'color': 'rgb(255 255 255)', 'min-height': '70vh', 'padding': '3vmax 0'}}>
-                    <div style={{'backgroundColor': '#ffffff1c', 'padding': '1vmax 2vmax', 'borderRadius': '15px', 'marginBottom': '1vmax'}}>
-                        <h3 style={{'fontSize': '2vmax'}}>Section A</h3>
-                        <p>1. This section consists of 10 logical reasoning MCQs. (Only one option is correct)</p>
-                        <p>2. The total marks for this section are 30</p>
-                        <p>3. Each question carries +3 marks for a correct answer, but -1 if the answer is incorrect</p>
-                    </div>
-                    <div style={{'backgroundColor': '#ffffff1c', 'padding': '1vmax 2vmax', 'borderRadius': '15px', 'marginBottom': '1vmax'}}>
-                        <h3 style={{'fontSize': '2vmax'}}>Section B</h3>
-                        <p>1. This section contains 5 fill-in-the-blank type questions</p>
-                        <p>2. The total marks for this section are 15</p>
-                        <p>3. Each question contains 3 marks</p>
-                        <p>4. Nonegative marks for this section</p>
-                    </div>
-                    <div style={{'backgroundColor': '#ffffff1c', 'padding': '1vmax 2vmax', 'borderRadius': '15px', 'marginBottom': '1vmax'}}>
-                        <h3 style={{'fontSize': '2vmax'}}>Section C</h3>
-                        <p>1. This section contains 10 MCQs. (Single correct answer)</p>
-                        <p>2. The total marks for this section are 40</p>
-                        <p>3. Each question carries 4 marks for the correct answer but -1 if the answer is incorrect</p>
-                    </div>
-                    <div style={{'backgroundColor': '#ffffff1c', 'padding': '1vmax 2vmax', 'borderRadius': '15px'}}>
-                        <h3 style={{'fontSize': '2vmax'}}>Section D</h3>
-                        <p>1. This section contains 5 questions with unknowns, namely X & Y</p>
-                        <p>2. The total mark for this section is 15</p>
-                        <p>3. Each question carries 3 marks, but partial marks of 1.5 will be given if one unknown is correct</p>
-                        <p>4. Nonegative marks for incorrect answers</p>
-                    </div>
-                </div> */}
+                
 
                 <a style={{'marginTop': '1vmax', 'marginBottom': '1vmax' }} className="d-flex justify-content-center" href="/quiz">
                     <button onClick={() =>

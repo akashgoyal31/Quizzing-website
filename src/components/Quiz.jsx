@@ -21,12 +21,8 @@ export default function Quiz() {
 
   const history = useHistory();
   const token = sessionStorage.getItem("auth");
-  // const [numbers ,  setNumbers]   = useState([]) ;  
   const numbers = [1 , 2 ,3,4,5,6,7,8,9,10 ,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
-  // const numbers = [1 , 2 ,3,4,5,6];
-  // const numbers = [1 , 2];
-
-  //useState hook to highlight the corresponding question toggle button
+  //useState hook to highlight the corresponding                               question toggle button
   let [active, setActive] = useState(0);
   //Increment on pushing next button
   const increment = () => {
@@ -53,20 +49,7 @@ export default function Quiz() {
     }
   }, [numbers]);
 
-  //Selection of Collection based on time
-  // let d=new Date().getTime();
-  // let startSlot1= new Date(2021, 0, 16, 18, 0, 0, 0).getTime();
-  // let endSlot1= new Date(2021, 0, 16, 19, 30, 0, 0).getTime();
-  // let startSlot2= new Date(2021, 0, 16, 20, 0, 0, 0).getTime();
-  // let endSlot2= new Date(2021, 0, 16, 21, 30, 0, 0).getTime();
-  // let collection='';
-  // if(d>startSlot1 && d<endSlot1){
-  //   collection='QuestionBank-Slot1'
-  // }else if(d>startSlot2 && d<endSlot2){
-  //   collection='QuestionBank-Slot2'
-  // }else{
-  //   collection='Questions'
-  // }
+       
 
   //useEffect for fetching questions from the database
   const [ques, setQues] = useState([]);
@@ -152,10 +135,8 @@ export default function Quiz() {
       <div className="grid-container">
         <div style={{ 'padding': '25px 25px' }} className="grid-item">
           <h3 style={{ 'color': '#EFB90A', 'fontWeight': 'bolder', 'textAlign': 'left', 'fontSize': '1.3rem' }}>
-            Quizzers' Recruitment <span style={{'fontSize':'1.3rem'}}>Round 1 </span>
-            {/* V<span style={{'fontSize':'1rem'}}>I</span>H<span style={{'fontSize':'1rem'}}>AA</span>N<span style={{'fontSize':'1rem'}}>'23</span> */}
-            {/* R<span style={{ 'fontSize': '1rem' }}>E</span>C<span style={{ 'fontSize': '1rem' }}>R</span>U<span style={{ 'fontSize': '1rem' }}>ITMENTS</span> */}
-
+          INTER-CITY QUIZZING CHALLENGE 
+           
           </h3>
         </div>
         <div className="grid-item" style={{ 'padding': '12px 0', 'color': '#f1faee' }}>
@@ -323,23 +304,3 @@ export default function Quiz() {
   );
 }
 
-//Shuffle an array
-
-// function shuffle(array) {
-//   var currentIndex = array.length, temporaryValue, randomIndex;
-
-//   // While there remain elements to shuffle...
-//   while (0 !== currentIndex) {
-
-//     // Pick a remaining element...
-//     randomIndex = Math.floor(Math.random() * currentIndex);
-//     currentIndex -= 1;
-
-//     // And swap it with the current element.
-//     temporaryValue = array[currentIndex];
-//     array[currentIndex] = array[randomIndex];
-//     array[randomIndex] = temporaryValue;
-//   }
-
-//   return array;
-// }

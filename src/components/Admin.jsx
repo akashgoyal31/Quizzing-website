@@ -13,7 +13,6 @@ export default function Admin(){
     const [c,setC] = useState("");
     const [d,setD] = useState("");
     const [ans,setAns] = useState("");
-    // const [cat,setCat] = useState("");
     let [message, setMessage]=useState("");
 	
 	const signOut=()=>{
@@ -79,12 +78,6 @@ export default function Admin(){
                 <form>
                 <div className="d-flex justify-content-center">
                     <div>
-                        {/* <input required value="Vihaan" type="text" placeholder="Event Name" /> */}
-                        {/* <select required onClick={e=>setCat(e.target.value)}>
-                            <option value="">Select Slot</option> 
-                            <option value="slot1">Slot 1</option>
-                            <option value="slot2">Slot 2</option>
-                        </select> */}
                         <textarea required value={question} onChange={event=>setQuestion(event.target.value)} type="text" placeholder="Question" />
                         <input required value ={a} onChange={(event)=>setA(event.target.value)} type="text" placeholder="Option 1" />
                         <input required value={b} onChange={(event)=>setB(event.target.value)} type="text" placeholder="Option 2" />

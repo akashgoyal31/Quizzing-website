@@ -4,14 +4,12 @@ import Event from './Event'
 import TestNotStarted from './TestNotStarted'
 import { useHistory , useLocation } from 'react-router-dom'
 import firebaseApp from '../firebase'
-import { colors } from '@material-ui/core'
 import { Link } from 'react-router-dom'
-// import Reactlogin from './Login'
+
 export default function Loginpage() {
   return (
     <div className="landing-page">
       <div className="d-flex justify-content-center">
-        {/* <Reactlogin /> */}
         <Login />
       </div>
       <Brand />
@@ -52,10 +50,7 @@ const Login = () => {
         userid = doc.id;
       });
       console.log(items);
-      // console.log(userid);
-      // console.log(items[0].quiznottaken);
-      // console.log(password);
-      // items[0].quiznottaken = true;
+
       if (email === "" || password === "") {
         setMessage(<p style={{ 'color': '#E63946', 'textAlign': 'center' }}>Fill all the details first.</p>);
         setTimeout(() => {
@@ -65,10 +60,8 @@ const Login = () => {
 
 
         history.push('/instructions');
-        // items[0].quiznottaken = false;
         firebaseApp.firestore().collection("Users").doc(userid).update({ quiznottaken: false });
         console.log(items[0].quiznottaken);
-        // items[0].quiznottaken=false;
         sessionStorage.setItem("name", email);
         sessionStorage.setItem("dob", password);
         sessionStorage.setItem("user", items[0].Name);
@@ -97,7 +90,7 @@ const Login = () => {
     <div className='landing-pages'>
       <Event />
       <div style={{ 'color': 'rgb(255 255 255)', 'padding': '2% 10% ', 'textAlign': 'justify', 'textAlignLast': 'center' }}>
-        <p>Connect with the Quizzers' Club MANIT, Central India's largest quizzing club, as we open up for recruiting. Welcome to an incredible journey of discovery and camaraderie. Good luck to all of the participants as they embark on this amazing journey!</p>
+        <p>Dive into the ultimate quiz showdown! Compete with top teams from across cities and showcase your knowledge in this thrilling event. Good luck to all participants as they embark on this exciting quest for quizzing glory!</p>
       </div>
       {render ? <div>
         <h3>Hello  !</h3>

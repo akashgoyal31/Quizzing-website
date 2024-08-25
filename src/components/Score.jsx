@@ -27,21 +27,7 @@ export default function Score() {
     const [points, setPoints] = useState(0);
     useEffect(() => {
         let score = 0;
-        // db.collection("AnswerBank/"+sessionStorage.getItem("name")+"-"+sessionStorage.getItem("dob")+"/Answers").onSnapshot((snapshot)=>{
-        //     snapshot.forEach((doc)=>{
-        //             if(doc.data().userAns === ""){
-        //                 setPoints(score);
-        //             }
-        //             if(doc.data().correct ===true){
-        //                 score=score+4;
-        //                 setPoints(score);
-        //             }
-        //             if(doc.data().correct === false){
-        //                 score=score-1;
-        //                 setPoints(score);
-        //             }
-        //     })
-        // })
+
 
         //If user didn't answer no increment no decrement in points
         db.collection("AnswerBank/" + sessionStorage.getItem("name") + "-" + sessionStorage.getItem("dob") + "/Answers").where('userAns', '==', '').onSnapshot((snapshot) => {
